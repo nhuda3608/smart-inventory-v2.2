@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- activity_dashboard.xml - v2.1 নতুন ড্যাশবোর্ড লেআউট -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Header -->
+        <TextView
+            android:id="@+id/tvWelcome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="স্বাগতম, Admin"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#1B5E20" />
+
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="২০ অক্টোবর ২০২৬, সোমবার"
+            android:textColor="#666"
+            android:layout_marginTop="4dp" />
+
+        <!-- 4 Cards Grid -->
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:rowCount="2"
+            android:layout_marginTop="16dp">
+
+            <include android:id="@+id/cardTodaySale" layout="@layout/card_stat" />
+            <include android:id="@+id/cardMonthlyProfit" layout="@layout/card_stat" />
+            <include android:id="@+id/cardStockValue" layout="@layout/card_stat" />
+            <include android:id="@+id/cardLowStock" layout="@layout/card_stat" />
+
+        </GridLayout>
+
+        <!-- Quick Actions -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="দ্রুত কাজ"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginTop="20dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp"
+            android:weightSum="4">
+
+            <Button android:id="@+id/btnNewSale" android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content" android:text="🛒&#10;নতুন বিক্রয়" android:textSize="11sp" />
+            <Button android:id="@+id/btnStockEntry" android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content" android:text="📦&#10;স্টক" android:textSize="11sp" android:layout_marginStart="8dp" />
+            <Button android:id="@+id/btnInvoice" android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content" android:text="🧾&#10;ইনভয়েস" android:textSize="11sp" android:layout_marginStart="8dp" />
+            <Button android:id="@+id/btnStudioIncome" android:layout_weight="1" android:layout_width="0dp" android:layout_height="wrap_content" android:text="📸&#10;স্টুডিও" android:textSize="11sp" android:layout_marginStart="8dp" />
+
+        </LinearLayout>
+
+        <!-- Chart -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="১২ মাসের আয়-ব্যয়"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginTop="20dp" />
+
+        <com.github.mikephil.charting.charts.BarChart
+            android:id="@+id/barChart"
+            android:layout_width="match_parent"
+            android:layout_height="240dp"
+            android:layout_marginTop="8dp"
+            android:background="@android:color/white"
+            android:elevation="2dp" />
+
+        <!-- Low Stock Alert -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="⚠️ কম স্টক এলার্ট"
+            android:textStyle="bold"
+            android:textColor="#C62828"
+            android:layout_marginTop="20dp" />
+
+        <TextView
+            android:id="@+id/tvLowStockList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:padding="12dp"
+            android:layout_marginTop="8dp"
+            android:text="• A4 কাগজ"
+            android:elevation="2dp" />
+
+        <!-- Calendar -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="📅 ক্যালেন্ডার"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp" />
+
+        <CalendarView
+            android:id="@+id/calendarView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@android:color/white"
+            android:elevation="2dp" />
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#F5F5F5">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="📦 স্টক এন্ট্রি (কেনা)"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#1565C0" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="সাপ্লায়ার / দোকান"
+        android:layout_marginTop="12dp">
+
+        <AutoCompleteTextView
+            android:id="@+id/acSupplier"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="12dp">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:hint="কোড / নাম লিখুন">
+
+            <AutoCompleteTextView android:id="@+id/acProduct" android:layout_width="match_parent" android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button android:id="@+id/btnScan" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="📷" android:layout_marginStart="8dp" />
+    </LinearLayout>
+
+    <TextView android:id="@+id/tvCurrentStock" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="" android:textColor="#2E7D32" android:textStyle="bold" android:layout_marginTop="4dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="12dp">
+
+        <com.google.android.material.textfield.TextInputLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:hint="পরিমাণ">
+            <EditText android:id="@+id/etQty" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:hint="কেনা দাম" android:layout_marginStart="8dp">
+            <EditText android:id="@+id/etBuyPrice" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="numberDecimal" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:hint="বিক্রয় দাম" android:layout_marginStart="8dp">
+            <EditText android:id="@+id/etSellPrice" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="numberDecimal" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+    <Button android:id="@+id/btnAdd" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="➕ কার্টে যোগ করুন" android:layout_marginTop="12dp" />
+
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="কার্ট" android:textStyle="bold" android:layout_marginTop="16dp" />
+
+    <TextView android:id="@+id/tvCart" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@android:color/white" android:padding="12dp" android:minHeight="100dp" android:layout_marginTop="8dp" android:text="কার্ট খালি" android:elevation="2dp" />
+
+    <TextView android:id="@+id/tvTotal" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="মোট কেনা: ৳ ০" android:textSize="18sp" android:textStyle="bold" android:textColor="#1565C0" android:gravity="end" android:layout_marginTop="8dp" />
+
+    <Button android:id="@+id/btnSave" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="💾 সেভ করুন &amp; স্টক বাড়ান" android:layout_marginTop="16dp" />
+
+</LinearLayout>
